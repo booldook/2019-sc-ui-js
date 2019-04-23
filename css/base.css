@@ -38,6 +38,40 @@ button {border: none;}
 .font-pf {font-family: "Playfair Display";}
 .font-pt {font-family: 'PT Sans', sans-serif;}
 
+/***** border *****/
+.bor-a {border: 1px solid #ccc;}
+.bor-t {border-top: 1px solid #ccc;}
+.bor-l {border-left: 1px solid #ccc;}
+.bor-r {border-right: 1px solid #ccc;}
+.bor-b {border-bottom: 1px solid #ccc;}
+
+/***** flex *****/
+.flex {display: flex;}
+.flex-col {flex-direction: column;}
+.flex-ct {justify-content: center;}
+.flex-st {justify-content: flex-start;}
+.flex-ed {justify-content: flex-end;}
+.flex-sa {justify-content: space-around;}
+.flex-sb {justify-content: space-between;}
+.flex-vct {align-items: center;}
+.flex-vst {align-items: flex-start;}
+.flex-ved {align-items: flex-end;}
+
+.flex-g {flex-grow: 1;}
+.flex-ng {flex-grow: 0;}
+.flex-s {flex-shrink: 1;}
+.flex-ns {flex-shrink: 0;}
+.flex-b1 {flex-basis: 10%;}
+.flex-b2 {flex-basis: 20%;}
+.flex-b3 {flex-basis: 30%;}
+.flex-b4 {flex-basis: 40%;}
+.flex-b5 {flex-basis: 50%;}
+.flex-b6 {flex-basis: 60%;}
+.flex-b7 {flex-basis: 70%;}
+.flex-b8 {flex-basis: 80%;}
+.flex-b9 {flex-basis: 90%;}
+.flex-b0 {flex-basis: 100%;}
+
 /***** 마진/패딩 *****/
 .mt {margin-top: 1rem;}
 .ml {margin-left: 1rem;}
