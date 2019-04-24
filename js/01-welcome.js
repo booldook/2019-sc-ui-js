@@ -25,7 +25,7 @@ var obj = {
 	id: null
 } 
 obj.src = 'aaaa';
-console.log(obj.src);
+//console.log(obj.src);
 // 전구 ES5
 document.getElementById("bt_on2").addEventListener("click", function(){
 	var src = document.getElementById("img2").src;
@@ -43,4 +43,30 @@ document.querySelector("#bt_on3").addEventListener("click", function(){
 });
 document.querySelector("#bt_off3").addEventListener("click", function(){
 	document.querySelector("#img3").src = '../img/pic_bulboff.gif';
+});
+
+//data("src")	//jQuery
+//getAttribute("data-src");	//es5
+//dataset["src"];	//es6
+
+//jQuery
+$("#img4").mouseenter(function(){
+	$(this).attr("src", $(this).data("hover"));
+});
+$("#img4").mouseleave(function(){
+	$(this).attr("src", $(this).data("src"));
+});
+// es5
+document.getElementById("img5").addEventListener("mouseenter", function(){
+	this.src = this.getAttribute("data-hover");
+});
+document.getElementById("img5").addEventListener("mouseleave", function(){
+	this.src = this.getAttribute("data-src");
+});
+// es6
+document.querySelector("#img6").addEventListener("mouseenter", function(){
+	this.src = this.dataset["hover"];
+});
+document.querySelector("#img6").addEventListener("mouseleave", function(){
+	this.src = this.dataset["src"];
 });
