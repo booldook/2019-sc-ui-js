@@ -1,0 +1,1 @@
+var gallery = new ScGallery($(".gallery_conts"), "../json/gallery.json");
