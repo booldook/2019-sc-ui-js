@@ -26,22 +26,29 @@
 						<h4>입력</h4>
 					</div>
 					<form>
-						<div class="card-body">
-
-						</div>
+						<ul class="card-body form-group">
+							<li class="mb_half">
+								<input type="text" id="uname" class="form-control" placeholder="이름"></li>
+							<li class="mb_half">
+								<input type="text" id="uid" class="form-control" placeholder="아이디"></li>
+							<li>
+								<input type="text" id="email" class="form-control" placeholder="이메일"></li>
+						</ul>
 						<div class="card-footer">
-							<button type="button" class="btn btn-primary">저장</button>
+							<button type="button" id="bt_save" class="btn btn-primary">저장</button>
 							<button type="reset" class="btn btn-danger">초기화</button>
 						</div>
 					</form>
 				</div>
-				<div class="card flex-b3">
+				<ul class="card flex-b3">
 					<div class="card-header">
 						<h4>출력</h4>
 					</div>
-					<div class="card-body">
-
-					</div>
+					<ul class="card-body" id="result">
+						<li class="mb_half">이름 : <span></span></li>
+						<li class="mb_half">아이디 : <span></span></li>
+						<li>이메일 : <span></span></li>
+					</ul>
 					<div class="card-footer">
 						<button type="reset" class="btn btn-danger">초기화</button>
 					</div>
