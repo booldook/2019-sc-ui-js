@@ -34,6 +34,10 @@ button {border: none;}
 .hover-r:hover {opacity: 1;}
 .gap {flex: 1 1;}
 
+/***** Form 요소 *****/
+.readonly {background-color: transparent !important;}
+
+
 /***** 폰트설정 *****/
 .font-pf {font-family: "Playfair Display";}
 .font-pt {font-family: 'PT Sans', sans-serif;}

@@ -83,3 +83,12 @@ var result3 = addMaker(30)(50);
 console.log(result);
 console.log(result2);
 console.log(result3);
+
+function zp(x) {
+	//var n = (x < 10) ? "0"+x : x;
+	//return n;
+	if(x < 10) return "0"+x;
+	else return x;
+}
+// 0 ~ 9 => 00, 01, 02 ... 09
+//10 ~ 60 => 10, 11, 12
