@@ -33,6 +33,28 @@
 							<td><input type="text" class="form-control" id="bg" name="bg"></td>
 						</tr>
 						<tr>
+							<td><b>테두리크기</b></td>
+							<td><input type="number" class="form-control" id="bor_wid" name="bor_wid"> px</td>
+							<td><b>테두리색상</b></td>
+							<td><input type="text" class="form-control" id="bor_color" name="bor_color"></td>
+							<td><b>테두리모양</b></td>
+							<td>
+								<select name="bor_style" id="bor_style" class="form-control">
+									<option value="solid">실선</option>
+									<option value="dotted">점선</option>
+									<option value="dashed">쇄선</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><b>좌우이동</b></td>
+							<td><input type="number" class="form-control" id="tr_x" name="tr_x"> px</td>
+							<td><b>상하이동</b></td>
+							<td><input type="number" class="form-control" id="tr_y" name="tr_y"> px</td>
+							<td><b>회전</b></td>
+							<td><input type="number" class="form-control" id="deg" name="deg"> deg</td>
+						</tr>
+						<tr>
 							<td colspan="6" class="text-center">
 								<button type="button" id="bt_save" class="btn btn-success">적용</button>
 								<button type="reset" id="bt_reset" class="btn btn-danger">초기화</button>
