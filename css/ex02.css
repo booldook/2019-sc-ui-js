@@ -1,0 +1,4 @@
+.table td {vertical-align: middle;}
+.form-control {max-width: 120px; width: 60%; display: inline-block;}
+.console {margin-top: 1rem; border: 1px solid #ccc; border-radius: 4px;}
+.box {width: 100px; height: 100px; background-color: blue; margin: 3rem auto;}

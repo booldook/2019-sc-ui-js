@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS 다루기</title>
+	<link rel="stylesheet" href="../css/fa.min.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/ex02.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/wow.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h2>CSS 다루기</h2>
+			<p class="mt_half">css/style 다루기</p>
+		</div>
+		<div class="conts mt">
+			<form name="forms" id="forms">
+				<table class="table table-bordered table-striped">
+					<tbody>
+						<tr>
+							<td><b>가로</b></td>
+							<td><input type="number" class="form-control" id="wid" name="wid"> px</td>
+							<td><b>세로</b></td>
+							<td><input type="number" class="form-control" id="hei" name="hei"> px</td>
+							<td><b>배경</b></td>
+							<td><input type="text" class="form-control" id="bg" name="bg"></td>
+						</tr>
+						<tr>
+							<td colspan="6" class="text-center">
+								<button type="button" id="bt_save" class="btn btn-success">적용</button>
+								<button type="reset" id="bt_reset" class="btn btn-danger">초기화</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			<div class="console">
+				<div class="box"></div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/ex02.js"></script>
+</body>
+</html>
