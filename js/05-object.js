@@ -39,3 +39,11 @@ document.getElementById("bt_solve").addEventListener("click", function(){
 //var res = eval("10" + "+" + "20");
 //console.log(res);
 
+// 객체는 변수와 함수를 가진다.
+var obj = {
+	tag: null,
+	chgColor: function(color){
+		if(this.tag != null && color != "") this.tag.style.backgroundColor = color;
+	}
+}
+

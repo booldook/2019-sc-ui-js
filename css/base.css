@@ -36,6 +36,8 @@ button {border: none;}
 
 /***** Form 요소 *****/
 .readonly {background-color: transparent !important;}
+.ins {padding: 9px; border: 1px solid #ccc; border-radius: 3px; transform: translateY(2px);}
+/* .ins:focus {outline-color: transparent;} */
 
 
 /***** 폰트설정 *****/
