@@ -79,27 +79,17 @@ new HoverSample($(".bt_img").eq(2), "../img/p5.jpg", "../img/p6.jpg");
 new HoverSample($(".bt_img").eq(3), "../img/p7.jpg", "../img/p8.jpg");
 */
 
-// Hover 객체
-// 규칙 : new Hover(객체(tag), 옵션);		//생성자
-// 옵션 : { }
-// 옵션 src				=> src : 원본이미지url
-// 옵션 hover			=> hover : 호버이미지url
-// 옵션 type			=> type : "fade", "slide", default ""
-// 옵션 duration	=> speed : ms 1000, 2000, default 500
-var Hover = (function(){
-	function Hover(obj, opt) {
-		this.obj = obj;
-		this.opt = opt;
-		this.option = {
-			type: "",
-			speed: 500
-		};
-	}
-	return Hover;
-}());
 
 new Hover($(".bt_img").eq(0), {
 	src: "../img/p1.jpg",
 	hover: "../img/p2.jpg"
 });
+
+new Hover($(".bt_img").eq(1), {
+	src: "../img/p3.jpg",
+	hover: "../img/p4.jpg",
+	type: "fade",
+	speed: 1000
+});
+
 
