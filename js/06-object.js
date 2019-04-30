@@ -2,19 +2,19 @@ $("#bt_chg").click(function(){
 	$(".box").css("background-color", $("#color").val());
 });
 
-$(".hover_chg").mouseenter(function(){
-	$(this).attr("src", $(this).data("hover"));
+$(".HoverSample_chg").mouseenter(function(){
+	$(this).attr("src", $(this).data("HoverSample"));
 });
-$(".hover_chg").mouseleave(function(){
+$(".HoverSample_chg").mouseleave(function(){
 	$(this).attr("src", $(this).data("src"));
 });
 
 /*
-var imgHover = {
+var imgHoverSample = {
 	obj: null,
-	init: function(src, hover){
+	init: function(src, HoverSample){
 		$(this.obj).mouseenter(function(){
-			$(this).attr("src", hover);
+			$(this).attr("src", HoverSample);
 		});
 		$(this.obj).mouseleave(function(){
 			$(this).attr("src", src);
@@ -22,10 +22,10 @@ var imgHover = {
 	}
 }
 
-imgHover.obj = $(".bt_img");
-imgHover.init('../img/p1.jpg', '../img/p2.jpg');
-imgHover.init('../img/p3.jpg', '../img/p4.jpg');
-imgHover.init('../img/p5.jpg', '../img/p6.jpg');
+imgHoverSample.obj = $(".bt_img");
+imgHoverSample.init('../img/p1.jpg', '../img/p2.jpg');
+imgHoverSample.init('../img/p3.jpg', '../img/p4.jpg');
+imgHoverSample.init('../img/p5.jpg', '../img/p6.jpg');
 */
 var Test = (function(){
 	function Test(obj) {
@@ -53,32 +53,53 @@ var sample2 = new Sample("홍길순");
 //console.log(sample2.name);
 //sample2.eat();
 
-
-
-var Hover = (function(){
-	function Hover(obj, src, hover) {
+var HoverSample = (function(){
+	function HoverSample(obj, src, HoverSample) {
 		this.obj = obj;
 		this.src = src;
-		this.hover = hover;
+		this.HoverSample = HoverSample;
 		this.init();
 	}
-	Hover.prototype.init = function(){
-		var my = this;
-		this.obj.mouseenter(function(){
-			$(this).attr("src", my.hover);
-		});
-		this.obj.mouseleave(function(){
-			$(this).attr("src", my.src);
-		});
+	return HoverSample;
+}());
+HoverSample.prototype.init = function(){
+	var my = this;
+	this.obj.mouseenter(function(){
+		$(this).attr("src", my.HoverSample);
+	});
+	this.obj.mouseleave(function(){
+		$(this).attr("src", my.src);
+	});
+}
+/*
+var img1 = new HoverSample($(".bt_img").eq(0), "../img/p1.jpg", "../img/p2.jpg");
+console.log(img1);
+new HoverSample($(".bt_img").eq(1), "../img/p3.jpg", "../img/p4.jpg");
+new HoverSample($(".bt_img").eq(2), "../img/p5.jpg", "../img/p6.jpg");
+new HoverSample($(".bt_img").eq(3), "../img/p7.jpg", "../img/p8.jpg");
+*/
+
+// Hover 객체
+// 규칙 : new Hover(객체(tag), 옵션);		//생성자
+// 옵션 : { }
+// 옵션 src				=> src : 원본이미지url
+// 옵션 hover			=> hover : 호버이미지url
+// 옵션 type			=> type : "fade", "slide", default ""
+// 옵션 duration	=> speed : ms 1000, 2000, default 500
+var Hover = (function(){
+	function Hover(obj, opt) {
+		this.obj = obj;
+		this.opt = opt;
+		this.option = {
+			type: "",
+			speed: 500
+		};
 	}
 	return Hover;
 }());
 
-
-var img1 = new Hover($(".bt_img").eq(0), "../img/p1.jpg", "../img/p2.jpg");
-console.log(img1);
-
-new Hover($(".bt_img").eq(1), "../img/p3.jpg", "../img/p4.jpg");
-new Hover($(".bt_img").eq(2), "../img/p5.jpg", "../img/p6.jpg");
-new Hover($(".bt_img").eq(3), "../img/p7.jpg", "../img/p8.jpg");
+new Hover($(".bt_img").eq(0), {
+	src: "../img/p1.jpg",
+	hover: "../img/p2.jpg"
+});
 
