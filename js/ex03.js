@@ -88,9 +88,7 @@ document.querySelector("#bt_move").addEventListener("click", function(){
 		left: tar,
 		duration: 1000,
 		easing: 'spring(1, 98, 15, 0)',
-		complete: function(anim) {
-			console.log("완료!");
-		}
+		complete: function(anim) { console.log("완료!");}
 	});
 });
 document.querySelector("#bt_reset").addEventListener("click", function(){
