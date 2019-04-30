@@ -45,7 +45,20 @@ var Hover = (function(){
 		});
 	}
 	Hover.prototype.hoverFade = function() {
-
+		var obj = this;
+		var $imgSrc = this.container;
+		var $parent = $imgSrc.parent();
+		if($parent.css("position") == "static") $parent.css("position", "relative");
+		var $imgHover = $imgSrc.clone().appendTo($parent);
+		$imgSrc.attr("src", this.opt.src);
+		$imgHover.attr("src", this.opt.hover);
+		$imgHover.css({"position": "absolute", "top": 0, "left": 0, "opacity": 0});
+		$imgHover.mouseenter(function() {
+			$(this).stop().animate({"opacity": 1}, obj.opt.speed);
+		});
+		$imgHover.mouseleave(function() {
+			$(this).stop().animate({"opacity": 0}, obj.opt.speed);
+		});
 	}
 	Hover.prototype.hoverSlide = function() {
 
