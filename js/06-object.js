@@ -79,6 +79,9 @@ new HoverSample($(".bt_img").eq(2), "../img/p5.jpg", "../img/p6.jpg");
 new HoverSample($(".bt_img").eq(3), "../img/p7.jpg", "../img/p8.jpg");
 */
 
+$("#bt_evt").click(function(e){
+	console.log(e);
+});
 
 new Hover($(".bt_img").eq(0), {
 	src: "../img/p1.jpg",
