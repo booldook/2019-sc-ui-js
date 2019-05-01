@@ -79,3 +79,27 @@ function allowExt(ext) {
 	}
 	return "notAllow";
 }
+
+// 문자열을 보내면 지정한 크기를 제외한 나머지 문자열을 리턴
+/*
+- 실행문 : 
+	cutStr(문자열, [자리수, 꼬리말]);
+	cutStr("문자열")
+	cutStr("문자열", 12)
+	cutStr("문자열", 12, "**")
+	cutStr("문자열", "***")
+*/
+function cutStr(_str, _len, _tail) {
+	var str = _str;
+	var len = 10;
+	var tail = '...';
+	var txt = '';
+	if(typeof _len == "number") {
+		len = _len;
+		if(typeof _tail == "string") tail = _tail; 
+	}
+	else if(typeof _len == "string") {
+		tail = _len;
+	}
+	return str.substr(0, len) + tail;
+}
