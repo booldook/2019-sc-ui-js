@@ -62,7 +62,37 @@ var Hover = (function(){
 		});
 	}
 	Hover.prototype.hoverSlide = function() {
-
+		var obj = this;
+		var $parent = this.container.parent();
+		if($parent.css("position") == "static") $parent.css("position", "relative");
+		var $wrap = $('<div></div>').appendTo($parent);
+		var $src = $('<img src="'+this.opt.src+'">').appendTo($wrap);
+		var $hover = $('<img src="'+this.opt.hover+'">').appendTo($wrap);
+		$parent.css({"overflow": "hidden"});
+		$wrap.css({
+			"position": "absolute",
+			"top": 0,
+			"left": 0,
+			"width": "200%"
+		});
+		$src.css({
+			"position": "absolute",
+			"top": 0,
+			"left": 0,
+			"width": "50%"
+		});
+		$hover.css({
+			"position": "absolute",
+			"top": 0,
+			"left": "50%",
+			"width": "50%"
+		});
+		$wrap.mouseenter(function(){
+			$(this).stop().animate({"left": "-100%"}, obj.opt.speed);
+		});
+		$wrap.mouseleave(function(){
+			$(this).stop().animate({"left": 0}, obj.opt.speed);
+		});
 	}
 	return Hover;
 }());
