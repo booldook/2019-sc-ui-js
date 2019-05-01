@@ -16,3 +16,4 @@ btLen.addEventListener("click", function(){
 btReset.addEventListener("click", function(){
 	dvConsole.innerHTML = '';
 });
+
