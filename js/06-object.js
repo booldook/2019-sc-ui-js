@@ -1,3 +1,4 @@
+/*
 $("#bt_chg").click(function(){
 	$(".box").css("background-color", $("#color").val());
 });
@@ -9,7 +10,6 @@ $(".HoverSample_chg").mouseleave(function(){
 	$(this).attr("src", $(this).data("src"));
 });
 
-/*
 var imgHoverSample = {
 	obj: null,
 	init: function(src, HoverSample){
@@ -26,7 +26,7 @@ imgHoverSample.obj = $(".bt_img");
 imgHoverSample.init('../img/p1.jpg', '../img/p2.jpg');
 imgHoverSample.init('../img/p3.jpg', '../img/p4.jpg');
 imgHoverSample.init('../img/p5.jpg', '../img/p6.jpg');
-*/
+
 var Test = (function(){
 	function Test(obj) {
 		this.obj = obj;
@@ -71,7 +71,7 @@ HoverSample.prototype.init = function(){
 		$(this).attr("src", my.src);
 	});
 }
-/*
+
 var img1 = new HoverSample($(".bt_img").eq(0), "../img/p1.jpg", "../img/p2.jpg");
 console.log(img1);
 new HoverSample($(".bt_img").eq(1), "../img/p3.jpg", "../img/p4.jpg");
@@ -89,7 +89,7 @@ new Hover($(".bt_img").eq(1), {
 	src: "../img/p3.jpg",
 	hover: "../img/p4.jpg",
 	type: "fade",
-	speed: 1000
+	speed: 3000
 });
 
 

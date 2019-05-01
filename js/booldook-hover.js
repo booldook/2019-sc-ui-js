@@ -5,6 +5,7 @@
 // 옵션 hover			=> hover : 호버이미지url
 // 옵션 type			=> type : "fade", "slide", default ""
 // 옵션 duration	=> speed : ms 1000, 2000, default 500
+
 var Hover = (function(){
 	function Hover(container, opt) {
 		this.container = container;
@@ -65,3 +66,24 @@ var Hover = (function(){
 	}
 	return Hover;
 }());
+
+// tag에서 생성하는 경우
+/*
+class="sc-hover"
+data-src  		<= 원본이미지
+data-hover		<= 호버이미지
+data-type			<= 효과타입
+data-speed	<= 애니메이션 효과
+*/
+$(".sc-hover").each(function(){
+	var src = $(this).data("src");
+	var hover = $(this).data("hover");
+	var type = $(this).data("type");
+	var speed = $(this).data("speed");
+	new Hover($(this), {
+		src: src,
+		hover: hover,
+		type: type,
+		speed: speed
+	});
+});
