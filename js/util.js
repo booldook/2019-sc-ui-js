@@ -19,9 +19,11 @@ function zp(n) {
 }
 
 // 우리나라 공용 시간을 리턴해주는 함수
-// localDate();
-// localDate(1508653948712);
-// 리턴값 : 2018-01-03 11:12:13
+/*
+- localDate();
+- localDate(1508653948712);
+- 리턴값 : 2018-01-03 11:12:13
+*/
 function localDate(val) {
 	var d = null;
 	var dt = '';
