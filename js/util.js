@@ -71,10 +71,10 @@ function splitName(name) {
 function allowExt(ext) {
 	var imgExt = ['jpg', 'jpeg', 'png'];
 	var fileExt = ['doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'hwp', 'txt', 'zip'];
-	for(var i=0 in imgExt) {
+	for(var i in imgExt) {
 		if(ext == imgExt[i]) return "image";
 	}
-	for(var j=0 in fileExt) {
+	for(var j in fileExt) {
 		if(ext == fileExt[j]) return "file";
 	}
 	return "notAllow";

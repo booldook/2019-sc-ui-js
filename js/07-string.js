@@ -147,3 +147,15 @@ $("#bt_table").click(makeTable3);			// ES5 문자열 생성 - 객체의 loop
 	</tbody>
 </table>
 */
+
+
+// 문자열 검색
+var ext = "jpg|jpeg|png|tif|tiff|bmp";
+$("#bt_sch").click(function(){
+	var str = $(".jumbotron > h2").text();
+	var search = $("#in1").val();
+	//var idx = str.indexOf(search);
+	var idx = ext.indexOf(search);
+	if(idx > -1 && search != "") $("#console").html('<h1>사용할 수 있습니다.</h1>');
+	else $("#console").html('<h1 style="color:red">사용할 수 없습니다.</h1>');
+});
