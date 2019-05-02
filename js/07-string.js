@@ -46,10 +46,89 @@ function makeTable() {
 	}
 }
 
-$("#bt_table").click(makeTable);
+function makeTable2() {
+	var html = '';
+	html += '<table class="table table-bordered table-hover text-center">';
+	html += '<thead style="background-color: #ccc;">';
+	html += '<tr>';
+	html += '<td>이름</td>';
+	html += '<td>국어</td>';
+	html += '<td>영어</td>';
+	html += '<td>수학</td>';
+	html += '</tr>';
+	html += '</thead>';
+	html += '<tbody>';
+	for(var i=0 in score) {
+		html += '<tr>';
+		html += '<td>'+score[i].name+'</td>';
+		html += '<td>'+score[i].kor+'점</td>';
+		html += '<td>'+score[i].eng+'점</td>';
+		html += '<td>'+score[i].math+'점</td>';
+		html += '</tr>';
+	}
+	html += '</tbody>';
+	html += '</table>';
+	$("#console").html(html);
+}
+
+function makeTable3() {
+	var html = '';
+	html += '<table class="table table-bordered table-hover text-center">';
+	html += '<thead style="background-color: #ccc;">';
+	html += '<tr>';
+	html += '<td>이름</td>';
+	html += '<td>국어</td>';
+	html += '<td>영어</td>';
+	html += '<td>수학</td>';
+	html += '</tr>';
+	html += '</thead>';
+	html += '<tbody>';
+	for(var i in score) {
+		html += '<tr>';
+		for(var prop in score[i]) html += '<td>'+score[i][prop]+'</td>';
+		html += '</tr>';
+	}
+	html += '</tbody>';
+	html += '</table>';
+	$("#console").html(html);
+}
+
+function makeTable4() {
+	var html = `
+	<table class="table table-bordered table-hover text-center">
+		<thead>
+			<tr>
+				<td>이름</td>
+				<td>국어</td>
+				<td>영어</td>
+				<td>수학</td>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>`;
+	$table = $(html).appendTo($("#console"));
+	var tr = ``;
+	for(var i=0 in score) {
+		tr += `
+		<tr>
+			<td>${score[i].name}</td>
+			<td>${score[i].kor}점</td>
+			<td>${score[i].eng}점</td>
+			<td>${score[i].math}점</td>
+		</tr>`;
+	}
+	$table.append(tr);
+}
+
+//$("#bt_table").click(makeTable);		// 구조를 만들어 가기
+//$("#bt_table").click(makeTable2);		// ES5 문자열 생성
+$("#bt_table").click(makeTable3);			// ES5 문자열 생성 - 객체의 loop
+//$("#bt_table").click(makeTable4);		// ES6 문자열 생성 (Template literal) - 배워만두자
 
 
 /*
+<table class="table table-bordered table-hover text-center">
 	<thead>
 		<tr>
 			<td>이름</td>
@@ -66,4 +145,5 @@ $("#bt_table").click(makeTable);
 			<td>95점</td>
 		</tr>
 	</tbody>
+</table>
 */
