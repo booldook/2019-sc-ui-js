@@ -117,6 +117,8 @@ var newHeros = heros.filter(function(v){
 console.log(heros);
 console.log(newHeros);
 
+
+// map 과 filter 연습문제
 var employees = [
 	{name: "홍길동", age: 29, pay: 3000},
 	{name: "홍길순", age: 33, pay: 4800},
@@ -125,15 +127,51 @@ var employees = [
 	{name: "홍길삼", age: 29, pay: 2800},
 	{name: "홍길오", age: 35, pay: 5800}
 ];
-
 var dvConsole = document.querySelector(".console");
 var btPay = document.querySelector("#bt_pay");
 var btAge = document.querySelector("#bt_age");
 btPay.addEventListener("click", payFilter);
 function payFilter() {
+	var $table = $("#employeeTb");
+	if($table.length == 0) $table = makeTable(dvConsole, "employeeTb");
+	var result = employees.filter(function(v){
+		if(v.pay >= 4000) return v;
+	});
+	makeData($table.children('tbody'), result);
 }
 btAge.addEventListener("click", ageFilter);
 function ageFilter() {
-	
+	var $table = $("#employeeTb");
+	if($table.length == 0) $table = makeTable(dvConsole, "employeeTb");
+	var result = employees.filter(function(v){
+		if(v.age < 30) return v;
+	});
+	makeData($table.children('tbody'), result);
+}
+function makeTable(parent, id) {
+	var $table = $('<table></table>').appendTo($(parent));
+	var $thead = $('<thead></thead>').appendTo($table);
+	var $theadTr = $('<tr></tr>').appendTo($thead);
+	var $tbody = $('<tbody></tbody>').appendTo($table);
+	$theadTr.append('<td>이름</td>');
+	$theadTr.append('<td>나이</td>');
+	$theadTr.append('<td>연봉</td>');
+	$table.attr("id", id);
+	$table.addClass("table table-bordered table-hover");
+	$theadTr.addClass("bg-dark text-light");
+	return $table;
+}
+function makeData($tbody, data) {
+	var html = '';
+	for(var i in data) {
+		html += '<tr>';
+		for(var prop in data[i]) html += '<td>'+data[i][prop]+'</td>';
+		html += '</tr>';
+	}
+	$tbody.empty();
+	$tbody.append(html);
+	$tbody.children("tr").data("wow-duration", "0.3s");
+	$tbody.children("tr").addClass("wow fadeInUp");
+	new WOW().init();
 }
 
