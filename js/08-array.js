@@ -130,6 +130,7 @@ var employees = [
 var dvConsole = document.querySelector(".console");
 var btPay = document.querySelector("#bt_pay");
 var btAge = document.querySelector("#bt_age");
+
 btPay.addEventListener("click", payFilter);
 function payFilter() {
 	var $table = $("#employeeTb");
@@ -139,6 +140,7 @@ function payFilter() {
 	});
 	makeData($table.children('tbody'), result);
 }
+
 btAge.addEventListener("click", ageFilter);
 function ageFilter() {
 	var $table = $("#employeeTb");
@@ -148,6 +150,8 @@ function ageFilter() {
 	});
 	makeData($table.children('tbody'), result);
 }
+
+// Table 생성
 function makeTable(parent, id) {
 	var $table = $('<table></table>').appendTo($(parent));
 	var $thead = $('<thead></thead>').appendTo($table);
@@ -161,6 +165,8 @@ function makeTable(parent, id) {
 	$theadTr.addClass("bg-dark text-light");
 	return $table;
 }
+
+// tbody > tr 생성
 function makeData($tbody, data) {
 	var html = '';
 	for(var i in data) {
