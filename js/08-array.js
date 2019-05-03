@@ -126,11 +126,13 @@ var employees = [
 	{name: "홍길오", age: 35, pay: 5800}
 ];
 
-document.querySelector("#bt_pay").addEventListener("click", payFilter);
+var dvConsole = document.querySelector(".console");
+var btPay = document.querySelector("#bt_pay");
+var btAge = document.querySelector("#bt_age");
+btPay.addEventListener("click", payFilter);
 function payFilter() {
-	
 }
-document.querySelector("#bt_age").addEventListener("click", ageFilter);
+btAge.addEventListener("click", ageFilter);
 function ageFilter() {
 	
 }
