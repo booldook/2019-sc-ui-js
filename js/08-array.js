@@ -120,35 +120,44 @@ console.log(newHeros);
 
 // map 과 filter 연습문제
 var employees = [
-	{name: "홍길동", age: 29, pay: 3000},
-	{name: "홍길순", age: 33, pay: 4800},
-	{name: "홍길만", age: 29, pay: 4500},
-	{name: "홍길이", age: 40, pay: 5500},
-	{name: "홍길삼", age: 29, pay: 2800},
-	{name: "홍길오", age: 35, pay: 5800}
+	{name: "홍길동", age: 29, pay: 3000, gender:"남자"},
+	{name: "홍길순", age: 33, pay: 4800, gender:"여자"},
+	{name: "홍길만", age: 29, pay: 4500, gender:"남자"},
+	{name: "홍길이", age: 40, pay: 5500, gender:"여자"},
+	{name: "홍길삼", age: 29, pay: 2800, gender:"남자"},
+	{name: "홍길오", age: 35, pay: 5800, gender:"남자"}
 ];
+
+// 객체 정의
 var dvConsole = document.querySelector(".console");
 var btPay = document.querySelector("#bt_pay");
 var btAge = document.querySelector("#bt_age");
 
+// Event
 btPay.addEventListener("click", payFilter);
+btAge.addEventListener("click", ageFilter);
+
+// 연봉 필터링 callback
 function payFilter() {
 	var $table = $("#employeeTb");
 	if($table.length == 0) $table = makeTable(dvConsole, "employeeTb");
+
 	var result = employees.filter(function(v){
 		if(v.pay >= 4000) return v;
 	});
-	makeData($table.children('tbody'), result);
+	console.log(result);
+	makeData($table, result);
 }
 
-btAge.addEventListener("click", ageFilter);
+// 나이 필터링 callback
 function ageFilter() {
 	var $table = $("#employeeTb");
 	if($table.length == 0) $table = makeTable(dvConsole, "employeeTb");
+
 	var result = employees.filter(function(v){
 		if(v.age < 30) return v;
 	});
-	makeData($table.children('tbody'), result);
+	makeData($table, result);
 }
 
 // Table 생성
@@ -157,9 +166,10 @@ function makeTable(parent, id) {
 	var $thead = $('<thead></thead>').appendTo($table);
 	var $theadTr = $('<tr></tr>').appendTo($thead);
 	var $tbody = $('<tbody></tbody>').appendTo($table);
-	$theadTr.append('<td>이름</td>');
-	$theadTr.append('<td>나이</td>');
-	$theadTr.append('<td>연봉</td>');
+	$theadTr.append('<th>이름</th>');
+	$theadTr.append('<th>나이</th>');
+	$theadTr.append('<th>연봉</th>');
+	$theadTr.append('<th>성별</th>');
 	$table.attr("id", id);
 	$table.addClass("table table-bordered table-hover");
 	$theadTr.addClass("bg-dark text-light");
@@ -167,8 +177,9 @@ function makeTable(parent, id) {
 }
 
 // tbody > tr 생성
-function makeData($tbody, data) {
+function makeData(table, data) {
 	var html = '';
+	var $tbody = $(table).children("tbody");
 	for(var i in data) {
 		html += '<tr>';
 		for(var prop in data[i]) html += '<td>'+data[i][prop]+'</td>';
@@ -176,8 +187,8 @@ function makeData($tbody, data) {
 	}
 	$tbody.empty();
 	$tbody.append(html);
-	$tbody.children("tr").data("wow-duration", "0.3s");
-	$tbody.children("tr").addClass("wow fadeInUp");
+	$(table).data("wow-duration", "0.5s");
+	$(table).addClass("wow fadeInUp");
 	new WOW().init();
 }
 
