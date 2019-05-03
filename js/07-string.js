@@ -153,9 +153,51 @@ $("#bt_table").click(makeTable3);			// ES5 문자열 생성 - 객체의 loop
 var ext = "jpg|jpeg|png|tif|tiff|bmp";
 $("#bt_sch").click(function(){
 	var str = $(".jumbotron > h2").text();
-	var search = $("#in1").val();
+	var search = $("#in1").val().toLowerCase();
 	//var idx = str.indexOf(search);
 	var idx = ext.indexOf(search);
 	if(idx > -1 && search != "") $("#console").html('<h1>사용할 수 있습니다.</h1>');
 	else $("#console").html('<h1 style="color:red">사용할 수 없습니다.</h1>');
 });
+
+
+// slice/substring/substr
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var a = txt.slice(5, 15);
+var a2 = txt.slice(5);
+var b = txt.substring(5, 15);
+var b2 = txt.substring(5);
+var c = txt.substr(15, 10);
+var c2 = txt.substr(15);
+console.log(txt);
+console.log("slice => " + a);
+console.log("substring => " + b);
+console.log("substr => " + c);
+
+// split
+var ext = "jpg|^|jpeg|^|png|^|tif|^|tiff|^|bmp";
+var extArr = ext.split("|^|");
+console.log(extArr);
+
+// split, join
+var tel = "010-8332-8040";
+var tels = tel.split("-");
+console.log(tels);
+var tel2 = tels.join("-");
+console.log(tel2);
+
+// replace
+var wid = "120px";
+wid = wid.replace("px", "");
+console.log(wid);
+console.log(Number(wid));
+
+// concat
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+console.log(text3);
+
+// trim
+var json = '		hello world	     	';
+console.log(json.trim());

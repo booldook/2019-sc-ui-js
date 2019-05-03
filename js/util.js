@@ -103,3 +103,8 @@ function cutStr(_str, _len, _tail) {
 	}
 	return str.substr(0, len) + tail;
 }
+
+// 문자열 앞/뒤의 공백을 없애기(ie8 이하에서 사용)
+function trims(str) {
+	return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+}
