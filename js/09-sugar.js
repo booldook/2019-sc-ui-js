@@ -64,6 +64,61 @@ console.log(sortUsers);
 // min, max, sum
 // subtract, union
 
+
 /***** Sugar.Date(sDate) *****/
+console.clear();
 var date = sDate.create();
 console.log(date);
+var date = new Date().getTime();	// Js
+console.log(date);	
+var date2 = Date.now();					// Sugar
+console.log(date2);
+
+// range
+var date3 = sDate.range('now', '5 days ago');
+console.log(date3);
+
+// addUnits
+// addMilliseconds / addSeconds / addMinutes / addHours / addDays / addWeeks / addMonths / addYears
+var deliDay = sDate.addDays(new Date(), 5);
+
+// format
+deliDayFmt = sDate.format(deliDay, "%Y-%m-%d %H:%M:%S");
+deliDayFmt2 = sDate.format(deliDay, "%y-%m-%d %H:%M:%S");
+deliDayFmt3 = sDate.format(deliDay, "%y-%m-%d");
+console.log(deliDay);
+console.log(deliDayFmt);
+console.log(deliDayFmt2);
+console.log(deliDayFmt3);
+
+// local표현
+var date = sDate.full(new Date(), 'ko');
+console.log(date);
+
+// 차이
+var chk = sDate.isBetween(new Date(Date.now()), new Date(Date.now()+50000), 1000);
+console.log(chk);
+
+
+/***** String *****/
+var camel = sString.camelize('my_house_color', false);
+console.log(camel);
+
+var str = '     too      much       space      ';
+var space = sString.compact(str);
+console.log(str);
+console.log(space);
+
+var html = sString.escapeHTML('<p>some text</p>');
+console.log(html);
+var tag = sString.unescapeHTML('&lt;p&gt;some text&lt;/p&gt;');
+console.log(tag);
+var url = sString.escapeURL('http://foo.com/', true);
+console.log(url);
+var html = sString.removeTags('<p>just <b>some</b> text</p>', 'b');
+console.log(html);
+var html = sString.stripTags('<p>just <b>some</b> text</p>', 'b');
+console.log(html);
+var cutString = sString.truncate('sittin on the dock', 10);
+console.log(cutString);
+
