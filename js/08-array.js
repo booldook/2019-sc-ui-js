@@ -206,3 +206,4 @@ heros.sort();				//오름차순
 console.log(heros);
 heros.reverse();		//내림차순
 console.log(heros);
+
