@@ -192,3 +192,17 @@ function makeData(table, data) {
 	new WOW().init();
 }
 
+
+// ES6
+// WeakSet() - 객체만 저장되는 배열
+// Map() - 객체를 key/value 형태로 저장하는 배열
+// 나중에...
+
+
+// 배열의 정렬
+var heros = ["아이언맨", "헐크", "캡틴", "토르", "호크아이"];
+console.log(heros);
+heros.sort();				//오름차순
+console.log(heros);
+heros.reverse();		//내림차순
+console.log(heros);
